@@ -8,7 +8,8 @@
     "vary": "^1.1.2"
   },
   "devDependencies": {
-    "concurrently": "^8.0.1"
+    "concurrently": "^8.0.1",
+    "git-cz": "^4.9.0"
   },
   "scripts": {
     "install-server": "npm install --prefix server",
@@ -18,10 +19,15 @@
     "client": "npm start --prefix client",
     "watch": "concurrently \"npm:server\" \"npm:client\"",
     "deploy": "npm run build --prefix client && npm start --prefix server",
-    "test": "npm run test --prefix server && npm run test --prefix client"
+    "test": "npm test --prefix server && npm test --prefix client"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "config": {
+    "commitizen": {
+      "path": "git-cz"
+    }
+  }
 }
