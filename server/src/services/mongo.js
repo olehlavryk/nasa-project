@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
-// FIXME: move this url to env variable
-const MONGO_URL = 'mongodb+srv://olehlavryk:olehlavryk@nasacluster.z5gmyms.mongodb.net/nasa?retryWrites=true&w=majority'
+require('dotenv').config();
+const MONGO_URL = process.env.MONGO_URL
 
 mongoose.connection.once('open', () => {
   console.log('Mongo DB connection ready!');
